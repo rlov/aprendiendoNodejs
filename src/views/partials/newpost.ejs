@@ -1,0 +1,20 @@
+<section class="newpost-modal" id="newpost-modal">
+    <div class="newpost">
+        <div class="preview">
+            <p>PREVIEW</p>
+        </div>
+        <div class="information-newpost">
+            <h2>Upload Post</h2>
+            <form id="form-upload-post" method="POST" action="/newpost" enctype="multipart/form-data">
+                <label for="description-post">Agrega una descripción: </label>
+                <textarea required rows="4" type="text" placeholder="Escribe una descripción"
+                    name="description"></textarea>
+                <label class="labelFile" for="file-post"><i class="fas fa-upload"></i>&nbsp;&nbsp;Upload</label>
+                <input class="file" id="file-post" type="file" name="image" required>
+                <input type="submit" value="Guardar" data-username=<%= username %>>
+            </form>
+            <p>¡Publica y conviertete en el amo de los likes!</p>
+        </div>
+    </div>
+    <button id="cerrar-newpost">X</button>
+</section>

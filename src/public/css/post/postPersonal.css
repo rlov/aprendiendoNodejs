@@ -1,0 +1,347 @@
+nav{
+    background-color: #2c2f34;
+}
+
+body{
+    background-color: #141518;
+}
+
+main{
+    width: 75%;
+    margin: 20px auto;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+}
+
+main > section{
+    width: 65%;
+}
+
+main .post-principal{
+    background-color: #2c2f34;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,.2);
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+main aside{
+    width: calc(35% - 10px);
+    margin-left: 10px;
+}
+
+.post-principal{
+    color: white;
+}
+
+.post-principal .contenedor-imagen-post{
+    width: 100%;
+    max-height: 600px;
+    text-align: center;
+    background-color: black;
+}
+
+.contenedor-imagen-post img{
+    width: 100%;
+    height: auto;
+    max-height: 550px;
+   object-fit: scale-down;
+}
+
+.post-principal .informacion-post{
+    width: 100%;
+    padding: 15px;
+}
+
+.informacion-post h1{
+    font-size: 30px;
+    font-family: 'Muli', sans-serif;
+}
+
+.informacion-post h3{
+    font-size: 14px;
+    font-family: 'Muli', sans-serif;
+    position: relative;
+}
+
+.informacion-post h3 a{
+    text-decoration: none;
+    color: cornflowerblue;
+}
+
+.informacion-post h3 span{
+    position: absolute;
+    right: 10px;
+}
+
+.contenedor-interacciones{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+}
+
+.contenedor-botones{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.contenedor-botones button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: rgba(255,255,255,.6);
+}
+
+.btn-like-post.activo{
+    color: green;
+}
+.btn-dislike-post.activo{
+    color: red;
+}
+
+.fa-arrow-up:hover{
+    color: green;
+}
+
+.fa-arrow-down:hover{
+    color: red;
+}
+
+.contenedor-interacciones button i{
+    font-size: 30px;
+}
+
+.contenedor-redes-sociales{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.contenedor-redes-sociales button{
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+}
+
+.fa-facebook{
+    color: #3b5998;
+}
+
+.fa-instagram{
+    color: rgb(228, 17, 164);
+}
+
+.fa-twitter{
+    color: skyblue;
+}
+
+.fa-reddit{
+    color: orange;
+}
+
+.contenedor-formulario-comentario{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-formulario-comentario form{
+    background-color: #2C2F34;
+    border: 2px solid #53555b;
+    border-radius: 4px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.contenedor-formulario-comentario textarea{
+    height: 80px;
+    resize: none;
+    width: 90%;
+    background-color: transparent;
+    color: #53555b;
+    border: none;
+    outline: none;
+    padding: 15px;
+    font-size: 18px;
+}
+
+.contenedor-formulario-comentario textarea:placeholder{
+    color: #53555b;
+}
+
+.contenedor-formulario-comentario footer{
+    width: 10%;
+    padding: 10px;
+}
+
+.form-comentario .submit{
+    background-color: rgb(24, 121, 32);
+    color: white;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    margin-right: 4px;
+    padding: 10px;
+    width: calc(8% -10px);
+}
+
+.numero-comentarios{
+    width: 100%;
+    text-align: left;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+.contenedor-comentarios-post{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.contenedor-comentarios-post .contenedor-comentario{
+    width: 100%;
+    margin: 10px 0px;
+    background-color: #2C2F34;
+    border-radius: 6px 6px 6px 0;
+    padding: 9px 12px 11px 15px;
+    color: #bbb;
+    border-left: 2px solid green;
+}
+
+.contenedor-comentario .username-comentario{
+    color: #bbb;
+    font-size: 14px;
+    font-weight: 700;
+    position: relative;
+    text-align: left;
+    width: 100%;
+}
+
+.username-comentario span{
+    position: absolute;
+    right: 0px;
+}
+
+.contenedor-comentario .contenido-comentario{
+    width: 100%;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+}
+
+/*
+BARRA LATERAL POST POPULARES
+*/
+
+.post-mas-populares{
+    width: 100%;
+    /* background-color: #2c2f34; */
+}
+
+.post-mas-populares > div{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.post-mas-populares > div h2{
+    color: white;
+    font-size: 12px;
+    font-family: 'Muli', sans-serif;
+}
+
+.post-mas-populares > div h2 span{
+    display: block;
+    margin: 2px;
+    font-size: 10px;
+}
+
+.post-mas-populares > div button{
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.contenedor-post-populares{
+    width: 100%;
+    display: flex;
+    justify-content: stretch;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-box-shadow: inset 15px -192px 92px -71px rgba(0,0,0,0.75);
+-moz-box-shadow: inset 15px -192px 92px -71px rgba(0,0,0,0.75);
+box-shadow: inset 15px -192px 92px -71px rgba(0,0,0,0.75);
+}
+
+.contenedor-post-populares::-webkit-scrollbar{
+    width: 8px;
+    height: 8px;
+    cursor: pointer;
+}
+
+.contenedor-post-populares::-webkit-scrollbar-thumb{
+    background: #53555b;
+    border-radius: 4px;
+}
+
+.contenedor-post-populares a{
+    margin: 5px;
+    width: calc(50% - 10px);
+    height: 120px;
+    text-decoration: none;
+}
+
+.contenedor-post-populares a:hover .description{
+    background-color: rgb(107, 107, 107,.7);
+}
+
+.contenedor-post-populares a .item-post-popular{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    border-radius: 4px;
+}
+.contenedor-post-populares div img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.item-post-popular p{
+    position: absolute;
+    background-color: #53555b;
+    color: white;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+    padding: 5px;
+    font-size: 12px;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

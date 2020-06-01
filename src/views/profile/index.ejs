@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fb3a9f20f5.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">  -->
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Profile - RLOV</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/profile/portada.css">
+    <link rel="stylesheet" href="/css/galeria.css">
+    <link rel="stylesheet" href="/css/post/newpost.css">
+    <link rel="stylesheet" href="/css/post/updatePost.css">
+    <link rel="stylesheet" href="/css/profile/about.css">
+
+</head>
+
+<body class="dark">
+    <%- include('../partials/nav') %>
+    <%- include('../partials/newpost') %>
+    <%- include('../partials/portada') %>
+
+    <main id="main">
+        <h2>POST
+            <div class="contenedor-botones-head-galeria">
+                <button title="With description" id="btn-galeria-mostrar-descripcion"><i
+                        class="fas fa-comment"></i></button>
+                <button title="Without description" id="btn-galeria-ocultar-description"><i
+                        class="fas fa-comment-slash"></i></button>
+            </div>
+        </h2>
+        <div class="galeria" id="galeria-profile">
+            <% for (let i = 0; i < publicaciones.length; i++) { %>
+            <div class="item-galeria">
+                <a target="_blank" href="/gallery/<%= idsPublicaciones[i] %>">
+                    <img src=<%= rutasPost[i] %>>
+                </a>
+                <div class="contenedor-descripcion-item">
+                    <p> <%= publicaciones[i].description %> </p>
+                    <div class="contenedor-interacciones">
+                        <button><i class="fas fa-arrow-up"></i>&nbsp;<%= publicaciones[i].likes %> </button>
+                        <button><i class="fas fa-arrow-down"></i>&nbsp;<%= publicaciones[i].dislike %> </button>
+                        <button><i class="far fa-comments"></i>&nbsp;<%= publicaciones[i].numeroComentarios %> </button>
+                        <button><i class="far fa-eye"></i>&nbsp;<%= publicaciones[i].views %> </button>
+                    </div>
+                </div>
+                <% if(isMyProfile){ %>
+                <button class="btn-update-delete">
+                    <i class="fas fa-ellipsis-v"></i>
+                </button>
+
+                <% } %>
+                <ul>
+                    <li class="opcion-update" data-publicacion="<%= idsPublicaciones[i] %>">Update</li>
+                    <li class="opcion-delete" data-publicacion="<%= idsPublicaciones[i] %>">Delete</li>
+                </ul>
+            </div>
+            <% } %>
+
+        </div>
+        <%- include('../partials/about') %>
+    </main>
+
+    <%- include('../partials/updatePost') %>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script src="/js/profile/index.js"></script>
+    <script src="/js/profile/seguir.js"></script>
+    <script src="/js/post/newpost.js"></script>
+    <script src="/js/helpersPUBLIC/nav.js"></script>
+    <script src="/js/profile/updateDelete.js"></script>
+</body>
+
+</html>

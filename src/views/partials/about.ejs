@@ -1,0 +1,217 @@
+<section class="seccion-profile-about" id="seccion-profile-about">
+
+    <div class="seccion-informacion">
+        <div class="columna-informacion-personal">
+            <header>
+                <img src="<%= pathPerfil %>">
+                Informacion general</header>
+            <div class="fullname">
+                <p class="titulo"><i class="fas fa-user"></i>Fullname:</p>
+                <p class="parrafo-fullname"><%= Usuario.name+' '+Usuario.lastname %> </p>
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-fullname" id="form-fullname" data-username="<%= userSession %> ">
+                    <input class="name" type="text" placeholder="Escribe tu name" required>
+                    <input class="lastname" type="text" placeholder="Escribe tu lastname" required>
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="birthday">
+                <p class="titulo"><i class="fas fa-birthday-cake"></i>Fecha de nacimiento:</p>
+                <p>14-06-2001</p>
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+            </div>
+            <div class="home">
+                <p class="titulo"><i class="fas fa-home"></i>Lugar de residencia:</p>
+                <% if(Usuario.home == ''){ %>
+                    <p class="parrafo-home">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-home"><%= Usuario.home %> </p>
+                <% } %> 
+                
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-home" id="form-home" data-username="<%= userSession %>">
+                    <input class="home" type="text" placeholder="¿Dónde Vives?">
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="correo">
+                <p class="titulo"><i class="fas fa-envelope"></i>Correo electrónico:</p>
+                
+                <% if(Usuario.email == ''){ %>
+                    <p class="parrafo-correo">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-correo"><%= Usuario.email %> </p>
+                <% } %> 
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-correo" id="form-correo" data-username="<%= userSession %>">
+                    <input class="correo" type="email" placeholder="Escribe tu email">
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="mobile">
+                <p class="titulo"><i class="fas fa-mobile-alt"></i>Cellphone:</p>
+                
+                <% if(Usuario.celular== ''){ %>
+                    <p class="parrafo-mobile">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-mobile"><%= Usuario.celular %> </p>
+                <% } %> 
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-mobile" id="form-mobile" data-username="<%= userSession %>">
+                    <input class="mobile" type="tel" placeholder="Coloca tu número">
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="ocupacion">
+                <p class="titulo"><i class="fas fa-briefcase"></i>Ocupación:</p>
+
+                <% if(Usuario.ocupacion == ''){ %>
+                    <p class="parrafo-ocupacion">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-ocupacion"><%= Usuario.ocupacion %></p>
+                <% } %>
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-ocupacion" id="form-ocupacion" data-username="<%= userSession %>">
+                    <input class="ocupacion" type="text" placeholder="Ocupación...">
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+
+        </div>
+        <div class="columna-informacion-general">
+            <div class="biografia">
+                    <p>Biografia: </p>
+                    <% if(Usuario.biografia== ''){ %>
+                        <p class="parrafo-biografia">No hay información</p>
+                    <% }else{ %>
+                        <p class="parrafo-biografia"><%= Usuario.biografia %></p>
+                    <% } %>
+                
+                    <% if(isMyProfile){ %>
+                        <button class="btn-update-about">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    <% } %>
+                <form class="form-update-about form-biografia" id="form-biografia" data-username="<%= userSession %>">
+                    <textarea class="biografia" placeholder="Escribe aquí..."></textarea>
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="contenedor-hobbies-intereses">
+                <div class="columna-hobbies">
+                    <p>Hobbies</p>
+                    <% if(Usuario.hobbies== ''){ %>
+                        <p class="parrafo-hobbies">No hay información</p>
+                    <% }else{ %>
+                        <p class="parrafo-hobbies"><%= Usuario.hobbies %></p>
+                    <% } %>
+                    <% if(isMyProfile){ %>
+                        <button class="btn-update-about">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    <% } %>
+                    <form class="form-update-about form-hobbies" id="form-hobbies" data-username="<%= userSession %>">
+                        <textarea class="hobbies" placeholder="Escribe aquí..."></textarea>
+                        <input type="submit" value="Guardar">
+                    </form>
+                </div>
+                <div class="columna-intereses">
+                    <p>Intereses</p>
+                    <% if(Usuario.intereses == ''){ %>
+                        <p class="parrafo-intereses">No hay información</p>
+                    <% }else{ %>
+                        <p class="parrafo-intereses"><%= Usuario.intereses %></p>
+                    <% } %>
+                    <% if(isMyProfile){ %>
+                        <button class="btn-update-about">
+                            <i class="far fa-edit"></i>
+                        </button>
+                    <% } %>
+                    <form class="form-update-about form-intereses" id="form-intereses" data-username="<%= userSession %>">
+                        <textarea class="intereses" placeholder="Escribe aquí..."></textarea>
+                        <input type="submit" value="Guardar">
+                    </form>
+                </div>
+            </div>
+            <div class="educacion">
+                <p>Educación:</p>
+
+                <% if(Usuario.educacion == ''){ %>
+                    <p class="parrafo-educacion">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-educacion"><%= Usuario.educacion %></p>
+                <% } %>
+
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-educacion" id="form-educacion" data-username="<%= userSession %>">
+                    <textarea class="educacion" placeholder="Escribe aquí..."></textarea>
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+            <div class="trabajo">
+                <p>Trabajo:</p>
+
+                <% if(Usuario.trabajo == ''){ %>
+                    <p class="parrafo-trabajo">No hay información</p>
+                <% }else{ %>
+                    <p class="parrafo-trabajo"><%= Usuario.trabajo %></p>
+                <% } %>
+
+                <% if(isMyProfile){ %>
+                    <button class="btn-update-about">
+                        <i class="far fa-edit"></i>
+                    </button>
+                <% } %>
+                <form class="form-update-about form-trabajo" id="form-trabajo" data-username="<%= userSession %>">
+                    <textarea class="trabajo" placeholder="Escribe aquí..."></textarea>
+                    <input type="submit" value="Guardar">
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <aside class="barra-derecha">
+        <div class="estadisticas">
+            <div id="btn-about-followers" data-username="<%= username %> ">
+                <p class="cantidad cantidad-followers">25K</p>
+                <p>Followers</p>
+            </div>
+            <div id="btn-about-following" data-username="<%= username %> ">
+                <p class="cantidad cantidad-following">18K</p>
+                <p>Following</p>
+            </div>
+
+        </div>
+        <%- include('followersProfile') %>
+        <%- include('followingProfile') %>
+    </aside>
+
+</section>

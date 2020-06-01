@@ -1,0 +1,28 @@
+<aside class="barra-izq-inicio" id="barra-izq-inicio">
+    <header class="titulo">
+        <% if(urlPerfilSession != 'none'){ %>
+            <img src="<%= urlPerfilSession %> ">
+        <% }else{ %>
+            <div>
+                <%= userSession.charAt(0).toUpperCase() %> 
+            </div>
+        <% } %>
+            <p>
+                <%= userSession %> 
+            </p>
+            <button class="btn-expander-barra-izq-inicio" id="btn-expander-barra-izq-inicio">
+                <i class="fas fa-angle-left"></i>
+            </button>
+    </header>
+
+    <ul class="lista-opciones-barra-izq-inicio" id="lista-opciones-barra-izq-inicio">
+        <li class="post"><i class="fas fa-clone"></i><span>Post</span></li>
+        <li><i class="fas fa-comments"></i><span>Chat</span></li>
+        <li><i class="fas fa-birthday-cake"></i><span>Birthday</span></li>
+        <li><i class="fas fa-calendar-alt"></i><span>Events</span></li>
+        <li><i class="fas fa-users"></i><span>Groups</span></li>
+        <li><i class="fas fa-sign"></i><span>Followers and Following</span></li>
+        <li><i class="fas fa-music"></i><span>Playlist</span></li>
+    </ul>
+    
+</aside>

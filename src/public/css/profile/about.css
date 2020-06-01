@@ -1,0 +1,599 @@
+.seccion-profile-about{
+    width: 96%;
+    margin: 30px auto;
+    letter-spacing: .0312rem;
+    font-weight: 500;
+    display: none;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.seccion-profile-about .seccion-informacion{
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    width: 80%;
+}
+
+.seccion-profile-about .barra-derecha{
+    width: 18%;
+    margin-left: 10px;
+}
+
+.seccion-informacion .columna-informacion-personal{
+    width: 25%;
+    margin-right: 10px;
+}
+
+.columna-informacion-personal header{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.columna-informacion-personal header img{
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+body.dark .seccion-informacion{
+    color: #888ea8;
+}
+
+body.dark .columna-informacion-personal {
+    background-color: #0e1726;
+}
+
+.columna-informacion-personal div{
+    height: 30px;
+    width: 100%;
+    overflow: hidden;
+    transition: all .8s ease-in-out;
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+
+.columna-informacion-personal div:hover{
+    height: 80px;
+} 
+
+.columna-informacion-personal div .titulo{
+    font-size: 12px;
+}
+
+.columna-informacion-personal div .titulo + p{
+    padding-left: 8px;
+    font-size: 15px;
+    font-weight: 700;
+    color: white;
+}
+
+.columna-informacion-personal div .titulo i{
+    margin-right: 8px;
+    background-color: #e0e6ed0e;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius: 5px;
+    transition: transform .8s ease-in-out;
+}
+
+.columna-informacion-personal div{
+    position: relative;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.columna-informacion-personal .fullname{
+    border-left: 2px solid #1b55e2;
+    position: relative;
+}
+
+.columna-informacion-personal .fullname i{
+    color: #1b55e2;
+}
+
+.columna-informacion-personal .birthday{
+    border-left: 2px solid yellow;
+}
+
+.columna-informacion-personal .birthday i{
+    color: yellow;
+}
+
+.columna-informacion-personal .home{
+    border-left: 2px solid #ef5350;
+}
+
+.columna-informacion-personal .home i{
+    color: #ef5350;
+}
+
+.columna-informacion-personal .correo{
+    border-left: 2px solid #009688;
+}
+
+.columna-informacion-personal .correo i{
+    color: #009688;
+}
+
+.columna-informacion-personal .mobile{
+    border-left: 2px solid #5c1ac3;
+}
+
+.columna-informacion-personal .mobile i{
+    color: #5c1ac3;
+}
+
+.columna-informacion-personal .ocupacion{
+    border-left: 2px solid white;
+}
+
+.columna-informacion-personal .ocupacion i{
+    color: white;
+}
+
+
+.columna-informacion-personal div .btn-update-about{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    display: none;
+    transition: display .5s ease-in-out;
+}
+
+.columna-informacion-personal div:hover > .btn-update-about{
+    display: inline-block;
+} 
+
+.columna-informacion-personal div:hover > .titulo i{
+    transform: rotate(45deg);
+}
+
+
+
+.columna-informacion-general{
+    width: 74%;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.columna-informacion-general div{
+    box-shadow: 0 0.46875rem 2.1875rem rgba(4, 9, 20, 0.03), 0 0.9375rem 1.40625rem rgba(4, 9, 20, 0.03), 0 0.25rem 0.53125rem rgba(4, 9, 20, 0.05), 0 0.125rem 0.1875rem rgba(4, 9, 20, 0.03);
+}
+
+/* body.dark .columna-informacion-general div{
+    background-color: #0e1726;
+} */
+
+.columna-informacion-general .biografia{
+    width: 100%;
+    background-color: #0e1726;
+    position: relative;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+
+.columna-informacion-general .biografia button{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: #1b55e2;
+    cursor: pointer;
+    font-size: 12px;
+    display: none;
+    transition: display .5s ease-in-out;
+}
+
+.columna-informacion-general .biografia{
+    color: white;
+    font-size: 13px;
+}
+
+.columna-informacion-general .biografia:hover  button{
+    display: inline-block;
+}
+
+
+body.dark .columna-informacion-general .biografia p:first-child{
+    font-size: 15px;
+    border-bottom: 2px solid #1b55e2;
+    margin-bottom: 8px;
+    color: #888ea8;
+}
+
+
+
+.columna-informacion-general .contenedor-hobbies-intereses{
+    width: calc(55% - 10px);
+    display: flex;
+    justify-content: space-between;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    height: auto;
+}
+
+.contenedor-hobbies-intereses .columna-hobbies,
+.contenedor-hobbies-intereses .columna-intereses{
+    width: 48%;
+    padding: 10px;
+    font-size: 13px;
+    color: white;
+    background-color:#0e1726;
+    position: relative;
+}
+
+.contenedor-hobbies-intereses .columna-hobbies button,
+.contenedor-hobbies-intereses .columna-intereses button{
+    display: none;
+    transition: .5s all ease-in-out;
+}
+
+.contenedor-hobbies-intereses .columna-hobbies:hover button,
+.contenedor-hobbies-intereses .columna-intereses:hover button{
+    display: inline-block;
+}
+
+.contenedor-hobbies-intereses .columna-hobbies p:first-child,
+.contenedor-hobbies-intereses .columna-intereses p:first-child{
+    border-bottom: 2px solid #009688;
+    font-size: 14px;
+    color: #888ea8;
+    margin-bottom: 4px;
+}
+
+
+.contenedor-hobbies-intereses .columna-hobbies button,
+.contenedor-hobbies-intereses .columna-intereses button{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color:#009688;
+    cursor: pointer;
+    font-size: 12px;
+    /* display: none; */
+    transition: display .5s ease-in-out;
+}
+
+body.dark .educacion,
+body.dark .trabajo{
+    background-color: #0e1726;
+}
+
+.educacion p:first-child,
+.trabajo p:first-child{
+    font-size: 14px;
+    color: #888ea8;
+    margin-bottom: 4px;
+}
+
+.educacion p:first-child{
+    border-bottom: 2px solid #ef5350;
+}
+
+.trabajo p:first-child{
+    border-bottom: 2px solid #5c1ac3;
+}
+
+.columna-informacion-general .educacion{
+    width: 45%;
+    font-size: 12px;
+    color: white;
+    padding: 13px;
+    position: relative;
+}
+
+.columna-informacion-general .trabajo{
+    width: calc(55% - 10px);
+    padding: 10px;
+    font-size: 13px;
+    color: white;
+    position: relative;
+}
+
+.educacion button,
+.trabajo button{
+    position: absolute;
+    right: 5px;
+    top: 10px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 12px;
+    /* display: none; */
+    transition: display .5s ease-in-out;
+    display: none;
+}
+
+.educacion:hover button,
+.trabajo:hover button{
+    display: inline-block;
+}
+
+.educacion button{
+    color: #ef5350;
+}
+
+.trabajo button{
+    color: #5c1ac3;
+}
+
+
+.barra-derecha .estadisticas{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+body.dark .barra-derecha .estadisticas{
+    background-color: #0e1726;
+    color: #888ea8;
+    border-radius: 10px;
+}
+
+.estadisticas > div{
+    width: 50%;
+    padding: 10px;
+    text-align: center;
+}
+
+.estadisticas > div:hover{
+    background-color: #e0e6ed0e;
+}
+
+.estadisticas > div:first-child{
+    border-right: 2px solid #888ea8;
+}
+
+.estadisticas .cantidad{
+    width: 100%;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.estadisticas .cantidad + p{
+    width: 100%;
+    text-align: center;
+    font-size: 13px;
+    color: #888ea8;
+}
+
+.followers-profile,
+.following-profile{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 10px;
+    position: relative;
+}
+
+.following-profile{
+    display: none;
+}
+
+.followers-profile::before{
+    content: '';
+    border-style: solid;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent #0e1726 transparent;
+    position: absolute;
+    top: -10px;
+    left: 20px;
+}
+
+.following-profile::before{
+    content: '';
+    border-style: solid;
+    border-width: 0px 10px 10px 10px;
+    border-color: transparent transparent #0e1726 transparent;
+    position: absolute;
+    top: -10px;
+    right:  20px;
+}
+
+body.dark .followers-profile,
+body.dark .following-profile{
+    background-color: #0e1726;
+}
+
+.followers-profile header,
+.following-profile header{
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    color: #888ea8;
+    border-bottom: 2px solid #1b55e2;
+}
+
+.followers-profile .lista-followers
+.following-profile .lista-following{
+    width: 100%;
+}
+
+.followers-profile a,
+.following-profile a{
+    width: 100%;
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+.followers-profile a li,
+.following-profile a li{
+    width: 100%;
+    padding: 5px 10px;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    height: 60px;
+    border-bottom: 1px solid #888ea838;
+}
+
+.followers-profile a li .username,
+.following-profile a li .username{
+    height: 42px;
+    width: 42px;
+    text-align: center;
+    line-height: 42px;
+    background-color: #009688;
+    border-radius: 50%;
+}
+
+.followers-profile a li img,
+.following-profile a li img{
+    height: 42px;
+    width: 42px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.followers-profile li p,
+.following-profile li p{
+    height: 60px;
+    width: calc(100% - 60px);
+    font-size: 14px;
+    padding-top: 10px;
+    margin-left: 10px;
+}
+
+.followers-profile li .time,
+.following-profile li .time{
+    display: block;
+    color: #888ea8;
+    font-size: 12px;
+    margin-top: 1px;
+}
+
+.followers-profile .lista-followers li:last-child,
+.following-profile .lista-following li:last-child{
+    border: none;
+}
+
+.columna-informacion-personal .form-update-about,
+.columna-informacion-general .form-update-about{
+    width: 100%;
+    height: auto;
+    text-align: right;
+    margin-top: 20px;
+    display: none;
+}
+
+.columna-informacion-personal .form-update-about input{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.columna-informacion-general .form-update-about textarea{
+    width: 100%;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    border-radius: 10px;
+    padding: 5px;
+    display: block;
+    margin-bottom: 5px;
+    resize: none;
+    height: auto;
+}
+
+.columna-informacion-personal .form-update-about input[type="submit"],
+.columna-informacion-general .form-update-about input[type="submit"]{
+    outline: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    padding: 8px;
+    font-size: 12px;
+    text-align: center;
+    border-radius: 10px;
+    margin-right: 6px;
+    height: 30px;
+    width: 80px;
+    line-height: 15px;
+}
+
+
+.fullname .form-update-about input[type="text"]{
+    border: 2px solid #1b55e2;
+}
+
+.fullname .form-update-about input[type="submit"]{
+    background-color: #1b55e2;
+}
+
+.home .form-update-about input[type="text"],
+.educacion .form-update-about textarea{
+    border: 2px solid #ef5350;
+}
+
+.home .form-update-about input[type="submit"],
+.educacion .form-update-about input[type="submit"]{
+    background-color: #ef5350;
+}
+
+
+.correo .form-update-about input[type="email"],
+.contenedor-hobbies-intereses .form-update-about textarea{
+    border: 2px solid #009688;
+}
+
+.correo .form-update-about input[type="submit"],
+.contenedor-hobbies-intereses .form-update-about input[type="submit"]{
+    background-color: #009688;
+}
+
+.mobile .form-update-about input[type="tel"],
+.trabajo .form-update-about textarea{
+    border: 2px solid #5c1ac3;
+}
+
+.mobile .form-update-about input[type="submit"],
+.trabajo .form-update-about input[type="submit"]{
+    background-color: #5c1ac3;
+}
+
+.ocupacion .form-update-about input[type="text"]{
+    border: 2px solid white;
+}
+
+.ocupacion .form-update-about input[type="submit"]{
+    background-color: #888ea8;
+}
+
+.biografia .form-update-about textarea{
+    border: 2px solid #1b55e2;
+}
+
+.biografia .form-update-about input[type="submit"]{
+    background-color: #1b55e2;
+}

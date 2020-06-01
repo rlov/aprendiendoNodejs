@@ -1,0 +1,15 @@
+<div class="followers-profile activo" id="followers-profile">
+    <header>Followers</header>
+    <ul class="lista-followers" id="lista-followers-profile">
+        <% for(let i = 0 ; i < Followers.seguidores.length ;i++){ %>
+            <a target="_blank" href="/profile/<%= Followers.seguidores[i] %>">
+                <li>
+                    <span class="username">R</span>
+                    <p><%= Followers.seguidores[i] %> 
+                    <span class="time"><%= Followers.fecha[i] %> </span>
+                    </p>
+                </li>
+            </a>
+        <% } %> 
+    </ul>
+</div>

@@ -1,0 +1,23 @@
+<!--Publicaciones más populares-->
+<section class="post-mas-populares" id="post-mas-populares">
+    <div>
+        <h2>MOST VIRAL IMAGES<span>Enjoy the images</span></h2>
+        <div>
+            <button><i class="fas fa-list"></i></button>
+            <button><i class="fas fa-th"></i></button>
+        </div>
+    </div>
+
+    <div class="contenedor-post-populares">
+
+        <% for(let i=0;i < idsPublicaciones.length ;i++){ %>
+            <a target="_blank" href="/gallery/<%= idsPublicaciones[i] %>" >
+                <div class="item-post-popular">
+                    <img src=<%= arregloPathImagen[i] %> >
+                    <p class="description"> <%= titles[i] %> </p>
+                </div>
+            </a>
+        <% } %> 
+        
+    </div>
+</section>

@@ -1,0 +1,23 @@
+<!--Publicaciones más populares-->
+<section class="seccion-usuarios-populares" id="seccion-usuarios-populares">
+    <h2>MOST POPULAR USERS<span><i class="fas fa-fire-alt"></i></span></h2>
+        <ul class = "lista-usuarios-populares">
+            <% for(let i=0;i < usuariosPopulares.length ;i++){ %>
+                <li>
+                    <a target="_blank" href="/profile/<%= usuariosPopulares[i].username %>">
+                        <div class="item-usuario-popular">
+                            <div class="avatar">
+                                <%= usuariosPopulares[i].username.charAt(0).toUpperCase() %> 
+                            </div>
+                            <p>
+                                <%= usuariosPopulares[i].username %> 
+                                <span>
+                                    <%= usuariosPopulares[i].nSeguidores %>&nbsp;followers
+                                </span>
+                            </p>
+                        </div>
+                    </a>
+                </li>
+                <% } %>
+        </ul>
+</section>

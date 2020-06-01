@@ -1,0 +1,57 @@
+<nav class="nav">
+    <div id="logo">
+        <a href="/inicio">RIKIR</a>
+        <button id="newpost-nav">
+            <i class="far fa-plus-square"></i> NEW POST
+        </button>
+    </div>
+    <div id="contenedor-input-nav" class="contenedor-input-nav">
+        <form method="GET" action="/search/nav">
+            <input required role="combobox" autocomplete="off" name="barra-busqueda-nav" id="barra-busqueda-nav" type="text" placeholder="Search Phots,tags,etc">
+            <button type="submit">
+                <i class="fas fa-search"></i>
+            </button>
+        </form>
+        <ul class="resultado-busqueda-nav" id="resultado-busqueda-nav">
+
+        </ul>
+    </div>
+    <div class="contenedor-avatar-nav">
+        <button id="btn-inicio" class="btn-inicio">
+            <a href="/inicio">inicio</a>
+        </button>
+        <button id="btn-perfil" class="btn-perfil">
+            <a href="/profile/<%= userSession %> ">perfil</a>
+        </button>
+        <!--PÁGINA NOTIFICACIONES MOMENTÁNEO-->
+        <a href="/notificaciones">
+            <button id="btn-notificaciones" class="btn-notificaciones">
+                <i class="far fa-bell"></i>
+            </button>
+        </a>
+        <p>
+            <%= userSession %>
+        </p>
+        <div class="avatar" id="avatar-nav">
+            <% if(urlPerfilSession != 'none'){ %>
+                <img src="<%= urlPerfilSession %>">
+            <% }else{ %>
+                <%= username.charAt(0) %>
+            <% } %> 
+        </div>
+
+        <div class="opciones-nav" id="opciones-nav">
+            <ul>
+                <li><i class="fas fa-cog"></i>Configuracion</li>
+                <li><i class="fas fa-user-shield"></i>Privacidad</li>
+                <li><a href="/logout"><i class="fas fa-sign-out-alt"></i>Cerrar sesión</a></li>
+            </ul>
+        </div>
+        <div class="ventana-notificaciones-nav" id="ventana-notificaciones-nav">
+            <h4>Notificaciones</h4>
+            <ul class="lista-notificaciones-nav">
+                
+            </ul>
+        </div>
+    </div>
+</nav>

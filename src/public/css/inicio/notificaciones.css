@@ -1,0 +1,69 @@
+body{
+    background-color: #f0f0f0;
+}
+nav{
+    background-color: #142850;
+}
+
+main{
+    width: 600px;
+    background-color: white;
+    margin: 30px auto;
+    border: .8px solid #888888;
+}
+
+main h2{
+    width: 100%;
+    padding: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    color: #888888;
+    border-bottom: 1px solid  #888888;
+}
+
+main ul{
+    width: 100%;
+}
+main ul li{
+    list-style: none;
+    width: 100%;
+    padding: 15px;
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 1px solid #888888;
+}
+
+main ul li img{
+    width: 50px;
+    height: 60px;
+    border-radius: 100%;
+    object-fit: cover;
+}
+
+main ul li p{
+    margin-left: 15px;
+    height: 100%;
+    padding-top: 10px;
+    width: calc(100% - 60px);
+    color: #888888;
+    font-size: 14px;
+    position: relative;
+}
+
+main ul li p button{
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    font-size: 20px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    letter-spacing: 1.1px;
+    color: #888888;
+}
+
+main ul li p span{
+    margin-top: 6px;
+    display: block;
+    font-size: 12px;
+}

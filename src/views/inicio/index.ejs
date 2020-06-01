@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/fb3a9f20f5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <title>Profile - RLOV</title>
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/post/newpost.css">
+    <link rel="stylesheet" href="/css/inicio/index.css">
+    <link rel="stylesheet" href="/css/inicio/seccionNoticias.css">
+    <link rel="stylesheet" href="/css/inicio/seccionPopulares.css">
+    <link rel="stylesheet" href="/css/inicio/seccionUsuariosPopulares.css">
+    <link rel="stylesheet" href="/css/inicio/listaLikesDislikes.css">
+    <link rel="stylesheet" href="/css/inicio/seccionChat.css">
+</head>
+
+<body>
+    <%- include('../partials/nav') %>
+    <%- include('../partials/newpost') %>
+    <main id="main">
+        <!-- <%- include('../partials/barraIzqInicio') %> -->
+        <section class="seccion-noticias" id="seccion-noticias">
+            <% for(let i=0 ; i<Noticias.length ; i++){ %>
+            <div class="item-seccion-noticias">
+
+                <div class="informacion-post">
+                    <div class="avatar-post">
+                        <% if(pathAvatares[i] != ''){ %>
+                            <img src="<%= pathAvatares[i] %> ">
+                        <% }else{ %>
+                            <%= usernamesNoticias[i].charAt(0).toUpperCase() %>
+                        <% } %> 
+                    </div>
+                    <div class="titulo-post">
+                        <h2><a target="_blank"
+                                href="/profile/<%= usernamesNoticias[i] %>"><%= usernamesNoticias[i] %></a>
+                            <span> <%= fechasNoticias[i] %> </span>
+                            <button><i class="fas fa-ellipsis-h"></i></button>
+                        </h2>
+                        
+                    </div>
+                </div>
+                <h3><%= Noticias[i].description %> </h3>
+
+                <div class="contenedor-imagen-post">
+                    <a href="/gallery/<%= urlPublicacionesNoticias[i] %>">
+                        <img src="<%= pathImagenesNoticias[i] %> ">
+                    </a>
+                </div>
+                
+                
+                
+                <div class="contenedor-interacciones">
+                    <!-- <div class="stats-post">
+                        <p data-publicacion="<%= urlPublicacionesNoticias[i] %>" class="cantidad-likes"><%= Noticias[i].likes %> <i
+                            class="far fa-thumbs-up"></i> </p>
+                        <p data-publicacion="<%= urlPublicacionesNoticias[i] %>" class="cantidad-dislikes"><%= Noticias[i].dislike %> <i
+                            class="far fa-thumbs-down"></i></p>
+                        <p data-publicacion="<%= urlPublicacionesNoticias[i] %>" class="cantidad-comentarios"><%= Noticias[i].numeroComentarios %> <i
+                            class="far fa-comment"></i></p>
+                        <p data-publicacion="<%= urlPublicacionesNoticias[i] %>" class="cantidad-vistas"><%= Noticias[i].views %> vistas</p>
+                        <div class="contenedor-redes-sociales">
+                            <button><i class="fab fa-facebook"></i></button>
+                            <button><i class="fab fa-instagram"></i></button>
+                            <button><i class="fab fa-twitter"></i></button>
+                            <button><i class="fab fa-reddit"></i></button>
+                        </div>
+                    </div> -->
+                    <div class="contenedor-botones">
+                        <button data-publicacion="<%= urlPublicacionesNoticias[i] %>"
+                            class="btn-like-post success-<%= estadoLike[i] %>"><i
+                                class="far fa-thumbs-up"></i></button>
+                        <button data-publicacion="<%= urlPublicacionesNoticias[i] %>"
+                            class="btn-dislike-post success-<%= estadoDislike[i] %>"><i
+                                class="far fa-thumbs-down"></i></button>
+                        <button data-publicacion="<%= urlPublicacionesNoticias[i] %>" class="btn-mostrar-comentarios"><i
+                                class="far fa-comment"></i></button>
+                        <!-- <div class="btn-marcar-favorito">
+                            <img src="">
+                        </div> -->
+                    </div>
+                </div>
+                <section class="seccion-comentarios-post">
+                    <div class="formulario-comentar">
+                        <div class="avatar-post">
+                            R
+                        </div>
+                        <form class="caja-formulario-comentar" data-publicacion="<%= urlPublicacionesNoticias[i] %>">
+                            <textarea class="textarea" required placeholder="Escribe tu comentario" rows="2"></textarea>
+                            <footer>
+                                <button type="submit" class="btn-comentar"><i class="far fa-paper-plane"></i></button>
+                            </footer>
+                        </form>
+                    </div>
+                    <div class="contenedor-comentarios" id="contenedor-comentarios">
+                        <ul class="lista-comentarios">
+
+                        </ul>
+                    </div>
+                </section>
+            </div>
+            <% } %>
+
+        </section>
+        <section class="inicio-mas-populares">
+            <%- include('../partials/populares') %>
+            <%- include('../partials/usuariosFamosos') %>
+        </section>
+        <section class="inicio-chat" id="inicio-chat">
+            <%- include('../partials/barraChat') %>
+        </section>
+    </main>
+
+    <div id="lista-likes-dislikes-views" class="lista-likes-dislikes-views" data-publicacion="nulo">
+        <section>
+            <div class="pestañas">
+                <button class="pestaña-like">Likes</button>
+                <button class="pestaña-dislike">Dislikes</button>
+                <button class="pestaña-views">Views</button>
+            </div>
+            <div class="listas">
+                <ul class="lista-likes">
+
+                </ul>
+                <ul class="lista-dislikes">
+
+                </ul>
+                <ul class="lista-views">
+
+                </ul>
+            </div>
+        </section>
+        <button id="cerrar-lista-likes-dislikes-views" class="cerrar-lista-likes-dislikes-views">X</button>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"></script>
+    <script src="https://imagesloaded.desandro.com/imagesloaded.pkgd.min.js"></script>
+    <script>
+        /* var $containerNoticias = $('.seccion-noticias');
+$containerNoticias.imagesLoaded(function () {
+    $containerNoticias.masonry();
+    document.querySelectorAll('.item-seccion-noticias').forEach((e) => {
+        e.style.opacity = '1';
+    }); 
+});*/
+    </script>
+    <script src="./socket.io/socket.io.js"></script>
+    <script src="/js/inicio/logicaSocket.js"></script>
+    <script src="/js/post/newpost.js"></script>
+    <script src="/js/helpersPUBLIC/nav.js"></script>
+    <script src="/js/inicio/cargandoMasNoticias.js"></script>
+</body>
+
+</html>

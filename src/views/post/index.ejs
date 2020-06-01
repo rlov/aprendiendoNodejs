@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/fb3a9f20f5.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Muli:wght@200&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/nav.css">
+    <link rel="stylesheet" href="/css/post/postPersonal.css">
+</head>
+
+<body>
+    <%- include('../partials/nav') %>
+    <main>
+        <section>
+            <div class="post-principal">
+                <div class="informacion-post">
+                    <h1> <%= description %> </h1>
+                    <h3> by <a href="/profile/<%= username %>"> <%=  username %></a> <span> <%= fechaPublicacion %> </span></h3>
+                </div>
+                <div class="contenedor-imagen-post">
+                    <img src=<%= pathImagen %>>
+                </div>
+                <div class="contenedor-interacciones">
+                    <div class="contenedor-botones">
+                        <button data-idpublicacion="<%= publicacion.id %>" class="btn-like-post"><i class="fas fa-arrow-up"></i>&nbsp;<%= publicacion.likes %> </button>
+                        <button data-idpublicacion="<%= publicacion.id %>" class="btn-dislike-post"><i class="fas fa-arrow-down"></i>&nbsp;<%= publicacion.dislike %></button>
+                        <button><i class="far fa-eye"></i>&nbsp;<%= publicacion.views %> </button>
+                    </div>
+                    <div class="contenedor-redes-sociales">
+                        <button><i class="fab fa-facebook"></i></button>
+                        <button><i class="fab fa-instagram"></i></button>
+                        <button><i class="fab fa-twitter"></i></button>
+                        <button><i class="fab fa-reddit"></i></button>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor-formulario-comentario">
+    
+                <form id="form-comentario" class="form-comentario">
+                    <textarea required rows="3" name="comentario" placeholder="Escriba un comentario"></textarea>
+                    <footer>
+                        <button data-idpublicacion="<%= publicacion.id %>" class="submit" type="submit"
+                            id="btn-comentar">Send</button>
+                    </footer>
+                </form>
+                <p class="numero-comentarios"><span id="numero-comentarios"><%= publicacion.numeroComentarios %></span> COMENTARIOS</p>
+            </div>
+    
+            <div class="contenedor-comentarios-post" id="contenedor-comentarios-post">
+                <!--Aquí agregaremos los comentarios conforme lo creamos-->
+                <% for(let i=0;i<comentarios.length;i++){ %>
+                <div class="contenedor-comentario">
+                    <p class="username-comentario"><%= usernames[i] %> <span><%= timeago(comentarios[i].fecha) %> </span></p>
+                    <p class="contenido-comentario"><%= comentarios[i].contenido %> </p>
+                </div>
+                <% } %>
+            </div>
+        </section>
+        <aside>
+            <%- include('../partials/populares') %> 
+        </aside>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/js/post/index.js"></script>
+    <script src="/js/helpersPUBLIC/nav.js"></script>
+</body>
+
+</html>

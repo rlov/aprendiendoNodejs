@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signin - RLOV</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="/css/login/signin.css">
+</head>
+<body>
+    <div class="contenedor-formulario">
+        <div>
+            <img src="/img/signin4.jpg">
+        </div>
+        <form method="POST" action="/signin">
+            <h2>Welcome Back</h2>
+            <input autocomplete="off" autofocus type="text" placeholder="Username" required name="username">
+            <input autocomplete="off" type="password" placeholder="Password" required name="password">
+            <input type="submit" value="Signin">
+            <footer>
+                I don´t have an account <a href="/signup">Signup</a>
+            </footer>
+        </form>
+    </div>
+    
+</body>
+</html>

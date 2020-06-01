@@ -1,0 +1,81 @@
+<section class="portada" id="contenedor-portada">
+    <img id="fondo-portada" src=<%= pathPortada %> >
+        <div class="avatar-portada">
+            <div class="avatar" id="contenedor-avatar">
+
+                <% if(pathPerfil != 'none'){ %>
+                    <img src="<%= pathPerfil %>">
+                <% }else{ %>
+                    <%= username.charAt(0) %>
+                <% } %> 
+                
+                <% if(isMyProfile){ %>
+                    <div class="btn-update-avatar" id="btn-update-avatar" data-username= <%= username %>>
+                        <i class="fas fa-pencil-alt"></i>
+                    </div> 
+                <% } %> 
+            </div>
+            <div class="descripcion-portada">
+                <p> <%= username %> </p>
+                <p class="stats"> <%= nSeguidores %> &nbsp; seguidores  </p>
+            </div>
+        </div>
+    <div class="opciones-portada">
+        <a id="btn-profile-post" href="/profile/<%= username %>" data-username= <%= username %>>
+            POSTS
+        </a>
+        <a id="btn-profile-about" data-username= <%= username %>>ABOUT</a>
+    </div>
+
+    <% if(isMyProfile){ %> 
+        <button id="cambiar-portada" data-username= <%= username %> >
+            <i class="fas fa-pencil-alt"></i>
+        </button>
+    <% }else{ %>
+        <!--Entonces podemos seguir al usuario-->
+        <% if(esSeguidor){ %>
+            <button id="btn-seguir" data-username= <%= username %> data-siguiendo= <%= esSeguidor %> >
+                <i class="fab fa-strava"></i>&nbsp;Following
+            </button>
+        <% }else{ %>
+            <button id="btn-seguir" data-username= <%= username %> data-siguiendo= <%= esSeguidor %> >
+                <i class="fas fa-heart"></i>&nbsp;Follow
+            </button>
+        <% } %> 
+    <% } %> 
+</section> 
+
+<section class="ventana-update-portada" id="ventana-update-portada">
+    <div>
+        <section class="opciones-update-portada">
+            <h2>Update portada</h2>
+
+            <form id="form-portada" enctype="multipart/form-data">
+                <label for="filePortada"><i class="fas fa-upload"></i> &nbsp;Upload</label>
+                <input id="filePortada" class="file" type="file" required name="image">
+                <input class="submit" type="submit" value="Aceptar">
+            </form>
+            <section class="preview">
+                <h2>Preview</h2>
+                <img id="portadaPreview" src="/img/portada-default.jpg">
+            </section>
+            <button id="cerrar-update-portada">X</button>
+        </section>
+    </div>
+</section>
+
+<section class="modal-update-avatar" id="modal-update-avatar">
+    <div class="ventana-update-avatar" id="ventana-update-avatar">
+        <div class="preview-update-avatar" id="preview-update-avatar">
+            <form id="form-avatar" enctype="multipart/form-data">
+                <label for="fileAvatar"><i class="fas fa-upload"></i> &nbsp;Upload</label>
+                <input id="fileAvatar" class="file" type="file" required name="image">
+                <input class="submit" type="submit" value="Aceptar">
+            </form>
+            <div class="contenedor-imagen">
+                <img src="/img/avatar5.jpg">
+            </div>
+        </div>
+        <button class="btn-close-update-avatar" id="btn-close-update-avatar">X</button>
+    </div>
+</section>

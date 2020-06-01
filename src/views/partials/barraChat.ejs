@@ -1,0 +1,40 @@
+<div class="barra-chat" id="barra-chat" data-usersession="<%= userSession %>">
+    <header id="btn-expandir-barra-contactos">
+        <button>
+            <i class="fas fa-user-circle"></i>
+        </button>
+        <span>CHAT</span>
+    </header>
+    <div class="contenedor-online-contactos" id="contenedor-online-contactos">
+        <h3>ONLINE CONTACTS</h3>
+        <ul class="lista-online-contactos" id="lista-online-contactos">
+            <% for(let i = 0;i< Contactos.usernames.length;i++){ %>
+                <li data-usersession="<%= userSession %>" data-username="<%= Contactos.usernames[i] %>" class="item-lista-contactos">
+                    <div class="contenedor-avatar">
+                        <% if(Contactos.pathPerfil[i] != 'none'){ %>
+                            <img src="<%= Contactos.pathPerfil[i] %> ">
+
+                        <% }else{ %>
+                            <div>
+                                <%= Contactos.usernames[i].charAt(0).toUpperCase() %> 
+                            </div>
+                        <% } %>
+                        <span class="estado-activo"></span>
+                    </div>    
+                    <div class="contenedor-username">
+                        <p><%= Contactos.fullname[i] %> </p>
+                    </div>
+                </li>
+
+            <% } %> 
+        </ul>
+    </div>
+    <!-- <div class="contenedor-offline-contacts">
+        <h3>OFFLINE CONTACTS</h3>
+    </div> -->
+</div>
+
+<!-- 
+<div class="seccion-chats" id="seccion-chats">
+    
+</div> -->

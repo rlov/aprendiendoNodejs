@@ -1,0 +1,21 @@
+<% if(Notificaciones){ %>
+                    <% for(let i = 0;i < Notificaciones.urlPublicaciones.length;i++){ %>
+                        <li>
+                            <a href="/gallery/<%= Notificaciones.urlPublicaciones[i] %> ">
+                                <div>
+                                    <span class="user-emisor"><%= Notificaciones.emisores[i].charAt(0).toUpperCase() %> </span>
+        
+                                <p class="action"><span class="user-receptor"><%= Notificaciones.emisores[i] %> </span>&nbsp;
+                                    <% if(Notificaciones.tipos[i] == 'like'){ %>
+                                        le gusta tu publicación
+                                    <% } %> 
+
+                                    <br><span class="type-notificacion"><i class="far fa-thumbs-up"></i></span><span class="time-notificacion">
+                                        <%= Notificaciones.tiempo[i] %> 
+                                    </span></p>
+                                <img src= "<%= Notificaciones.rutasImagenes[i] %>" >
+                                </div>
+                            </a>
+                        </li>
+                    <% } %> 
+                <% } %> 
